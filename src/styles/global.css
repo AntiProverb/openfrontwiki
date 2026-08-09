@@ -66,7 +66,9 @@ body {
 }
 .wiki-content a:hover { color: #fff; text-decoration: underline; }
 .wiki-content a.external::after { content: " ↗"; font-size: 0.8em; opacity: 0.6; }
-.wiki-deadlink { color: #f9731699; }
+/* former red/self links from the source wiki — this is a read-only mirror, so
+   render them as plain text rather than a jarring orange that reads as broken */
+.wiki-deadlink { color: inherit; }
 
 /* headings */
 .wiki-content h1,
