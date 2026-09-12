@@ -1,0 +1,7 @@
+{
+  "repository": "openfrontio/OpenFrontIO",
+  "revision": "9f30fee4e51bc9cc954c6ec549779d11306e3ad6",
+  "commitUrl": "https://github.com/openfrontio/OpenFrontIO/commit/9f30fee4e51bc9cc954c6ec549779d11306e3ad6",
+  "checkedAt": "2026-09-12",
+  "commitMessage": "Adopt clean-room reimplementations for a set of client code blocks (#5373)"
+}

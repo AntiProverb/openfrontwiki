@@ -5,6 +5,8 @@ import SiteFooter from "../components/SiteFooter.astro";
 import BrowseSidebar from "../components/BrowseSidebar.astro";
 import pages from "../data/pages.json";
 import { pageDescription } from "../lib/meta.js";
+import { githubReferencesForPage } from "../data/github-references.js";
+import { currentGameDataForPage, GITHUB_GAME_DATA } from "../data/github-game-data.js";
 
 export function getStaticPaths() {
   return pages.map((page) => ({
@@ -15,6 +17,8 @@ export function getStaticPaths() {
 
 const { page } = Astro.props;
 const metaDescription = pageDescription(page.html);
+const githubReferences = githubReferencesForPage(page);
+const currentGameData = currentGameDataForPage(page.slug);
 
 // On the OpenFront Masters hub page, list the mirrored Masters pages by group.
 const isMastersHub = page.slug === "OpenFront_Masters";
@@ -89,6 +93,33 @@ const isStub = (page.cats || []).some((c) => /stub/i.test(c));
       <div class="mt-5 h-px w-full bg-gradient-to-r from-malibu/50 via-white/10 to-transparent"></div>
 
       <article class="wiki-content mt-6" set:html={page.html} data-pagefind-body data-pagefind-meta={`title:${page.title}`} />
+
+      {currentGameData.length > 0 && (
+        <section class="mt-8 border-t border-white/10 pt-5" data-pagefind-ignore>
+          <p class="text-xs font-semibold uppercase tracking-widest text-cyan-glow">Current source values</p>
+          <p class="mt-2 text-sm text-dawn/60">Verified against OpenFrontIO commit {GITHUB_GAME_DATA.revision.slice(0, 7)} on {GITHUB_GAME_DATA.checkedAt}. Costs and timings can change with balance updates.</p>
+          <div class="mt-3 overflow-x-auto rounded-xl border border-white/10">
+            <table class="w-full min-w-[520px] text-left text-sm">
+              <thead class="bg-navy-700/80 text-xs uppercase tracking-wider text-dawn/60"><tr><th class="px-4 py-3">Value</th><th class="px-4 py-3">Current data</th><th class="px-4 py-3">Source</th></tr></thead>
+              <tbody class="divide-y divide-white/10 bg-navy-700/40">
+                {currentGameData.map((entry) => <tr><th scope="row" class="px-4 py-3 font-medium text-white">{entry.label}</th><td class="px-4 py-3 text-aquarius">{entry.value}</td><td class="px-4 py-3"><a href={`https://github.com/openfrontio/OpenFrontIO/blob/ccf2bd9a412b0be4360f1b68d8b6a20573c297f6/src/core/configuration/${entry.source.split("#")[0]}#${entry.source.split("#")[1]}`} target="_blank" rel="noopener noreferrer" class="text-dawn/70 hover:text-white">{entry.source} ↗</a></td></tr>)}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      )}
+
+      {githubReferences.length > 0 && (
+        <section class="mt-8 border-t border-white/10 pt-5" data-pagefind-ignore>
+          <p class="text-xs font-semibold uppercase tracking-widest text-cyan-glow">Current code references</p>
+          <p class="mt-2 text-sm text-dawn/60">This article's game mechanics can be cross-checked against the OpenFrontIO source:</p>
+          <ul class="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            {githubReferences.map((reference) => (
+              <li><a href={reference.url} target="_blank" rel="noopener noreferrer" class="text-aquarius hover:text-white">{reference.label} <span aria-hidden="true">↗</span></a></li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {isMastersHub && mastersGroups.length > 0 && (
         <div class="wiki-content mt-8">
