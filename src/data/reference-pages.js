@@ -127,6 +127,18 @@ export const REFERENCE_PAGES = [
     ],
   },
   {
+    slug: "attacking-effectively",
+    title: "Attacking Effectively",
+    kicker: "Player guide",
+    description: "A practical, source-backed guide to attack sizing, troop capacity, regeneration, and defender density.",
+    source: source("src/core/configuration/Config.ts"),
+    facts: ["Human attack orders currently use troops divided by five.", "Regeneration scales with the percentage of troop capacity that remains empty; attack outcomes also depend on defender density and terrain."],
+    sections: [
+      { title: "Start here", links: [["Attacking effectively guide", "/guides/attacking-effectively"], ["Attacking Guide", "/Attacking_Guide"], ["Early Game", "/Early_Game"]] },
+      { title: "Supporting systems", links: [["Combat", "/Combat"], ["Troops", "/Troops"], ["Player State & Resources", "/reference/player-state"], ["Current game data", "/reference/game-data"]] },
+    ],
+  },
+  {
     slug: "patch-notes",
     title: "Patch Notes & Changelog",
     kicker: "Version history",

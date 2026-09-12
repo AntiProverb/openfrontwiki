@@ -21,6 +21,7 @@ const lead = articleLead(page.html);
 const audience = articleAudience(page);
 const githubReferences = githubReferencesForPage(page);
 const currentGameData = currentGameDataForPage(page.slug);
+const hasEquationClaims = /formula|spawnChance|regeneration|per second|per tick|capacity|troop.*%|%.*troop/i.test(page.html.replace(/<[^>]+>/g, " "));
 
 // On the OpenFront Masters hub page, list the mirrored Masters pages by group.
 const isMastersHub = page.slug === "OpenFront_Masters";
@@ -107,6 +108,14 @@ const isStub = (page.cats || []).some((c) => /stub/i.test(c));
       <div class="mt-5 h-px w-full bg-gradient-to-r from-malibu/50 via-white/10 to-transparent"></div>
 
       <article class="wiki-content mt-6" set:html={page.html} data-pagefind-body data-pagefind-meta={`title:${page.title}`} />
+
+      {hasEquationClaims && (
+        <section class="equation-review mt-8" data-pagefind-ignore>
+          <p class="text-xs font-semibold uppercase tracking-widest text-cyan-glow">Equation review</p>
+          <p class="mt-2 text-sm text-dawn/70">This article contains formula-like or percentage-based claims. Historical pages may describe an older version of the game; use the current player guide and source-backed values for present-day decisions.</p>
+          <a href="/guides/attacking-effectively" class="mt-3 inline-flex text-sm font-semibold text-aquarius hover:text-white">Read the current attack and regeneration guide →</a>
+        </section>
+      )}
 
       {currentGameData.length > 0 && (
         <section class="mt-8 border-t border-white/10 pt-5" data-pagefind-ignore>

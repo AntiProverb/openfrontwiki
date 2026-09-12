@@ -68,6 +68,15 @@ body {
 .timeline-step strong, .timeline-step span:last-child { display: block; }
 .timeline-step strong { color: #fff; font-family: var(--font-display), var(--font-sans); font-size: 1rem; }
 .timeline-step span:last-child { margin-top: 0.15rem; opacity: 0.7; }
+.guide-callout { margin: 1.2rem 0; border: 1px solid rgb(0 200 255 / 0.24); border-radius: 0.75rem; background: rgb(0 132 209 / 0.1); padding: 1rem 1.1rem; }
+.guide-callout p { margin: 0.45rem 0 0; }
+.guide-example { margin: 1.2rem 0; border-left: 3px solid var(--color-malibu); border-radius: 0 0.65rem 0.65rem 0; background: rgb(255 255 255 / 0.04); padding: 0.8rem 1rem; }
+.guide-example p { margin: 0.45rem 0 0; }
+.guide-example ul { margin-bottom: 0; }
+.equation { overflow-x: auto; border: 1px solid rgb(255 255 255 / 0.1); border-radius: 0.5rem; background: var(--color-navy-700); padding: 0.7rem 0.9rem; }
+.equation code { white-space: nowrap; color: var(--color-cyan-glow); }
+.source-note { border-top: 1px solid rgb(255 255 255 / 0.1); color: var(--color-dawn); font-size: 0.82rem; opacity: 0.8; padding-top: 1rem; }
+.equation-review { border: 1px solid rgb(255 215 0 / 0.22); border-radius: 0.75rem; background: rgb(255 215 0 / 0.06); padding: 1rem 1.1rem; }
 
 /* Faint hexagonal grid motif — referenced in brand art direction. */
 .hex-grid {
