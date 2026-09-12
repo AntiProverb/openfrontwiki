@@ -84,6 +84,10 @@ body {
 .equation-status { border: 1px solid rgb(0 200 255 / 0.25); border-radius: 999px; padding: 0.2rem 0.55rem; color: var(--color-cyan-glow); font-size: 0.68rem; text-transform: uppercase; }
 .equation-audit-historical { border-color: rgb(255 215 0 / 0.22); }
 .equation-audit-historical .equation-status { border-color: rgb(255 215 0 / 0.3); color: var(--color-masters); }
+.map-article-hero { overflow: hidden; margin-bottom: 0; border: 1px solid rgb(255 255 255 / 0.12); border-radius: 0.85rem; background: var(--color-navy-700); }
+.map-article-hero img { display: block; width: 100%; max-height: 28rem; object-fit: contain; background: var(--color-navy-700); }
+.map-article-hero figcaption { padding: 0.8rem 1rem; color: var(--color-dawn); font-size: 0.85rem; line-height: 1.5; opacity: 0.8; }
+.map-preview-fallback { display: grid; min-height: 14rem; place-items: center; background: radial-gradient(circle at 30% 20%, rgb(0 200 255 / 0.22), transparent 35%), linear-gradient(135deg, var(--color-navy-600), var(--color-navy-700)); color: var(--color-cyan-glow); font-family: var(--font-display), var(--font-sans); font-size: clamp(1.5rem, 5vw, 3rem); font-weight: 700; letter-spacing: 0.04em; }
 
 /* Faint hexagonal grid motif — referenced in brand art direction. */
 .hex-grid {

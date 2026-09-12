@@ -1,9 +1,9 @@
 {
   "repository": "openfrontio/OpenFrontIO",
-  "revision": "9f30fee4e51bc9cc954c6ec549779d11306e3ad6",
+  "revision": "1b086cb59cb1d702eb3de3e8706a9b303ac064a6",
   "checkedAt": "2026-09-12",
   "scope": "src/core/game, src/core/configuration, core schemas, client/server runtime, and map-generator source files",
-  "totalFiles": 593,
+  "totalFiles": 595,
   "coveredFiles": [
     "src/core/Schemas.ts",
     "src/core/StatsSchemas.ts",
@@ -237,6 +237,7 @@
     "src/client/SteamSDK.ts",
     "src/client/Store.ts",
     "src/client/StreamsFeed.ts",
+    "src/client/StripeInline.ts",
     "src/client/SubscriptionModal.ts",
     "src/client/SubscriptionPolicy.ts",
     "src/client/TerrainMapFileLoader.ts",
@@ -283,6 +284,7 @@
     "src/client/components/GraphicsPresetSelector.ts",
     "src/client/components/GraphicsPresetTools.ts",
     "src/client/components/IOSAddToHomeScreenBanner.ts",
+    "src/client/components/InlineCheckout.ts",
     "src/client/components/InputCard.ts",
     "src/client/components/InputCardStyles.ts",
     "src/client/components/InsufficientCurrencyDialog.ts",

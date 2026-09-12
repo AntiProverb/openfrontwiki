@@ -7,6 +7,7 @@ import pages from "../data/pages.json";
 import { articleAudience, articleLead, pageDescription } from "../lib/meta.js";
 import { githubReferencesForPage } from "../data/github-references.js";
 import { currentGameDataForPage, GITHUB_GAME_DATA } from "../data/github-game-data.js";
+import { mapPresentation } from "../lib/mapMeta.js";
 
 export function getStaticPaths() {
   return pages.map((page) => ({
@@ -19,6 +20,7 @@ const { page } = Astro.props;
 const metaDescription = pageDescription(page.html);
 const lead = articleLead(page.html);
 const audience = articleAudience(page);
+const mapInfo = page.section === "Maps" ? mapPresentation(page) : null;
 const githubReferences = githubReferencesForPage(page);
 const currentGameData = currentGameDataForPage(page.slug);
 const hasEquationClaims = /formula|spawnChance|regeneration|per second|per tick|capacity|troop.*%|%.*troop/i.test(page.html.replace(/<[^>]+>/g, " "));
@@ -110,6 +112,13 @@ const relatedPages = pages
       }
 
       <div class="mt-5 h-px w-full bg-gradient-to-r from-malibu/50 via-white/10 to-transparent"></div>
+
+      {mapInfo && (
+        <figure class="map-article-hero mt-6" data-pagefind-ignore>
+          {mapInfo.image ? <img src={mapInfo.image} alt={`${page.title} map preview`} loading="lazy" /> : <div class="map-preview-fallback" aria-label={`${page.title} map preview`}>{page.title}</div>}
+          <figcaption>{mapInfo.description}</figcaption>
+        </figure>
+      )}
 
       <article class="wiki-content mt-6" set:html={page.html} data-pagefind-body data-pagefind-meta={`title:${page.title}`} />
 

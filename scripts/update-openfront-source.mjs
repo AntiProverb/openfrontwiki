@@ -135,10 +135,20 @@ const enumNames = Object.fromEntries(
 const mapRecords = [...mapsSource.matchAll(/\{\s*id: "(\w+)",[\s\S]*?categories: \[([^\]]*)\],[\s\S]*?defaultNationCount: (\d+),[\s\S]*?\n  \},/g)]
   .map((match) => ({ id: match[1], title: enumNames[match[1]] || match[1], categories: [...match[2].matchAll(/"([^"]+)"/g)].map((item) => item[1]), nations: Number(match[3]) }))
   .filter((map) => !pages.some((page) => normalize(page.title) === normalize(map.title)));
+const mapImageDir = path.join(root, "public", "images", "maps");
+await fs.mkdir(mapImageDir, { recursive: true });
+for (const map of mapRecords) {
+  map.slug = slugify(map.title);
+  map.image = `/images/maps/${map.slug}.png`;
+  const readableCategories = map.categories.map((category) => category.replace(/(^|_)([a-z])/g, (_, start, letter) => `${start ? " " : ""}${letter.toUpperCase()}`));
+  map.description = `${map.title} is a live OpenFront map in the ${readableCategories.join(", ")} catalogue with ${map.nations} default nations.`;
+  const imageResponse = await fetch(`https://raw.githubusercontent.com/${repo}/${revision}/map-generator/assets/maps/${map.id.toLowerCase()}/image.png`);
+  if (imageResponse.ok) await fs.writeFile(path.join(mapImageDir, `${map.slug}.png`), Buffer.from(await imageResponse.arrayBuffer()));
+}
 const mapEntries = mapRecords.map((map) => {
-  const slug = slugify(map.title);
+  const slug = map.slug;
   const categories = map.categories.map((category) => category.replace(/(^|_)([a-z])/g, (_, start, letter) => `${start ? " " : ""}${letter.toUpperCase()}`));
-  return `  { slug: "${slug}", id: "${map.id}", title: "${map.title}", categories: ${JSON.stringify(categories)}, nations: ${map.nations}, source: MAP_SOURCE },`;
+  return `  { slug: "${slug}", id: "${map.id}", title: "${map.title}", categories: ${JSON.stringify(categories)}, nations: ${map.nations}, image: "${map.image}", description: ${JSON.stringify(map.description)}, source: MAP_SOURCE },`;
 }).join("\n");
 const registryPath = path.join(root, "src/data/live-game-registry.js");
 const registry = await fs.readFile(registryPath, "utf8");

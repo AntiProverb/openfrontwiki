@@ -2,33 +2,33 @@
 // to source lines so the wiki never presents a moving GitHub branch as stable data.
 export const GITHUB_GAME_DATA = {
   repository: "openfrontio/OpenFrontIO",
-  revision: "9f30fee4e51bc9cc954c6ec549779d11306e3ad6",
+  revision: "1b086cb59cb1d702eb3de3e8706a9b303ac064a6",
   checkedAt: "2026-09-12",
   files: [
     {
       label: "Core configuration",
       path: "src/core/configuration/Config.ts",
-      url: "https://github.com/openfrontio/OpenFrontIO/blob/9f30fee4e51bc9cc954c6ec549779d11306e3ad6/src/core/configuration/Config.ts",
+      url: "https://github.com/openfrontio/OpenFrontIO/blob/1b086cb59cb1d702eb3de3e8706a9b303ac064a6/src/core/configuration/Config.ts",
     },
     {
       label: "Doomsday Clock implementation",
       path: "src/core/game/DoomsdayClock.ts",
-      url: "https://github.com/openfrontio/OpenFrontIO/blob/9f30fee4e51bc9cc954c6ec549779d11306e3ad6/src/core/game/DoomsdayClock.ts",
+      url: "https://github.com/openfrontio/OpenFrontIO/blob/1b086cb59cb1d702eb3de3e8706a9b303ac064a6/src/core/game/DoomsdayClock.ts",
     },
     {
       label: "Rail networks and stations",
       path: "src/core/game/RailNetworkImpl.ts",
-      url: "https://github.com/openfrontio/OpenFrontIO/blob/9f30fee4e51bc9cc954c6ec549779d11306e3ad6/src/core/game/RailNetworkImpl.ts",
+      url: "https://github.com/openfrontio/OpenFrontIO/blob/1b086cb59cb1d702eb3de3e8706a9b303ac064a6/src/core/game/RailNetworkImpl.ts",
     },
     {
       label: "Transport ships and water systems",
       path: "src/core/game/TransportShipUtils.ts",
-      url: "https://github.com/openfrontio/OpenFrontIO/blob/9f30fee4e51bc9cc954c6ec549779d11306e3ad6/src/core/game/TransportShipUtils.ts",
+      url: "https://github.com/openfrontio/OpenFrontIO/blob/1b086cb59cb1d702eb3de3e8706a9b303ac064a6/src/core/game/TransportShipUtils.ts",
     },
     {
       label: "Unit veterancy",
       path: "src/core/game/Veterancy.ts",
-      url: "https://github.com/openfrontio/OpenFrontIO/blob/9f30fee4e51bc9cc954c6ec549779d11306e3ad6/src/core/game/Veterancy.ts",
+      url: "https://github.com/openfrontio/OpenFrontIO/blob/1b086cb59cb1d702eb3de3e8706a9b303ac064a6/src/core/game/Veterancy.ts",
     },
   ],
   sections: [

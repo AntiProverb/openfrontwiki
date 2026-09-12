@@ -30,8 +30,12 @@ const { map } = Astro.props;
         <h1 class="mt-2 font-display text-3xl font-bold tracking-wide text-white sm:text-4xl">{map.title}</h1>
         <div class="mt-4 flex flex-wrap gap-2">{map.categories.map((category) => <span class="rounded-full border border-white/10 bg-navy-700/60 px-2.5 py-1 text-xs text-dawn/80">{category}</span>)}</div>
       </header>
+      <figure class="map-article-hero mt-6" data-pagefind-ignore>
+        {map.image ? <img src={map.image} alt={`${map.title} map preview`} /> : <div class="map-preview-fallback" aria-label={`${map.title} map preview`}>{map.title}</div>}
+        <figcaption>{map.description}</figcaption>
+      </figure>
       <article class="wiki-content mt-6" data-pagefind-body>
-        <p>This map is present in the live OpenFrontIO map registry but was not present in the wiki article manifest at the time of this audit.</p>
+        <p>{map.description} This map is present in the live OpenFrontIO map registry but was not present in the wiki article manifest at the time of this audit.</p>
         <h2>Registry data</h2>
         <ul>
           <li><strong>Source ID:</strong> <code>{map.id}</code></li>
