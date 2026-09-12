@@ -15,6 +15,24 @@ const files = {
   veterancy: ["Unit veterancy", "src/core/game/Veterancy.ts"],
   water: ["Water systems", "src/core/game/WaterManager.ts"],
   gameMap: ["Game map model", "src/core/game/GameMap.ts"],
+  allianceRequests: ["Alliance requests", "src/core/game/AllianceRequestImpl.ts"],
+  teams: ["Team assignment", "src/core/game/TeamAssignment.ts"],
+  stats: ["Match statistics", "src/core/game/Stats.ts"],
+  statsImpl: ["Statistics implementation", "src/core/game/StatsImpl.ts"],
+  statsSchemas: ["Statistics schemas", "src/core/StatsSchemas.ts"],
+  motion: ["Unit motion plans", "src/core/game/MotionPlans.ts"],
+  unit: ["Unit implementation", "src/core/game/UnitImpl.ts"],
+  unitGrid: ["Unit spatial grid", "src/core/game/UnitGrid.ts"],
+  railroad: ["Railroads", "src/core/game/Railroad.ts"],
+  railroadGrid: ["Railroad spatial grid", "src/core/game/RailroadSpatialGrid.ts"],
+  player: ["Player state", "src/core/game/PlayerImpl.ts"],
+  settings: ["User settings", "src/core/game/UserSettings.ts"],
+  updates: ["Game updates", "src/core/game/GameUpdates.ts"],
+  updateUtils: ["Game update utilities", "src/core/game/GameUpdateUtils.ts"],
+  terraNullius: ["Unowned territory", "src/core/game/TerraNulliusImpl.ts"],
+  terrainLoader: ["Terrain map loader", "src/core/game/TerrainMapLoader.ts"],
+  terrainSearch: ["Terrain search", "src/core/game/TerrainSearchMap.ts"],
+  tileSet: ["Tile set", "src/core/game/TileSet.ts"],
 };
 
 const bySlug = {
@@ -31,15 +49,19 @@ const bySlug = {
   Annexation: ["attack", "alliances"],
   Traitor: ["alliances", "attack"],
   Nations: ["nations"],
-  Train: ["rail", "railImpl", "station"],
-  Railroad: ["rail", "railImpl"],
-  Trade: ["config", "water"],
+  Train: ["rail", "railImpl", "railroad", "railroadGrid", "station"],
+  Railroad: ["rail", "railImpl", "railroad", "railroadGrid"],
+  Trade: ["config", "water", "player"],
   Trade_Ship: ["config", "water"],
   Transport_Ship: ["transport", "water"],
   Warship: ["config", "veterancy"],
   Maps: ["maps", "gameMap"],
-  Terrain: ["gameMap", "water"],
-  Tile: ["gameMap"],
+  Terrain: ["gameMap", "terrainLoader", "terrainSearch", "tileSet"],
+  Tile: ["gameMap", "tileSet", "terrainSearch"],
+  Controls: ["settings"],
+  Teams: ["teams"],
+  Troops: ["player", "unit", "motion"],
+  Update_History: ["updates", "updateUtils"],
 };
 
 const bySection = {
@@ -50,6 +72,7 @@ const bySection = {
   Economy: ["config", "water"],
   "Game modes": ["config"],
   Guides: ["config"],
+  "Meta & community": ["settings"],
 };
 
 export function githubReferencesForPage(page) {
