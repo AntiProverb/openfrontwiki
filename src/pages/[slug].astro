@@ -113,6 +113,13 @@ const relatedPages = pages
 
       <article class="wiki-content mt-6" set:html={page.html} data-pagefind-body data-pagefind-meta={`title:${page.title}`} />
 
+      {page.slug === "Early_Game" && (
+        <section class="guide-callout mt-8" data-pagefind-ignore>
+          <strong>This legacy page has been expanded.</strong>
+          <p class="mt-2">Use the current <a href="/guides/early-game" class="text-aquarius hover:text-white">Early Game Guide</a> for source-backed opening priorities, capacity management, and your first safe attack.</p>
+        </section>
+      )}
+
       {hasEquationClaims && (
         <section class="equation-review mt-8" data-pagefind-ignore>
           <p class="text-xs font-semibold uppercase tracking-widest text-cyan-glow">Equation review</p>
