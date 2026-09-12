@@ -41,3 +41,10 @@ export function articleAudience(page) {
   if (page.section === "Maps") return ["Map browsers", "Scenario players"];
   return ["All players"];
 }
+
+export function cleanArticleHtml(html) {
+  const $ = cheerio.load(html || "", null, false);
+  // Imported maintenance boxes are stale editorial metadata, not player content.
+  $("table.ambox, table.metadata").remove();
+  return $.html().trim();
+}

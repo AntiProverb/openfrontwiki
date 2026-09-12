@@ -4,12 +4,14 @@ import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import BrowseSidebar from "../../components/BrowseSidebar.astro";
 import { MISSING_LIVE_MAPS } from "../../data/live-game-registry.js";
+import mapCatalog from "../../data/map-catalog.json";
 
 export function getStaticPaths() {
   return MISSING_LIVE_MAPS.map((map) => ({ params: { slug: map.slug }, props: { map } }));
 }
 
 const { map } = Astro.props;
+const mapRecord = mapCatalog.maps.find((entry) => entry.id === map.id);
 ---
 
 <Layout title={`${map.title} — OpenFront Wiki`} description={`${map.title} map reference from the current OpenFrontIO map registry.`}>
@@ -34,6 +36,7 @@ const { map } = Astro.props;
         {map.image ? <img src={map.image} alt={`${map.title} map preview`} /> : <div class="map-preview-fallback" aria-label={`${map.title} map preview`}>{map.title}</div>}
         <figcaption>{map.description}</figcaption>
       </figure>
+      {mapRecord && <figure class="map-data-visual mt-4" data-pagefind-ignore><figcaption><span>Map profile</span><small>Live registry data</small></figcaption><div class="map-data-bars"><div><span>Default nations</span><strong>{mapRecord.nations}</strong><i style={`width: ${Math.min(100, mapRecord.nations * 4)}%`}></i></div><div><span>FFA frequency</span><strong>{mapRecord.ffaFrequency < 0 ? "Special" : mapRecord.ffaFrequency}</strong><i style={`width: ${Math.min(100, Math.max(8, mapRecord.ffaFrequency * 10))}%`}></i></div><div><span>Team frequency</span><strong>{mapRecord.teamFrequency < 0 ? "Special" : mapRecord.teamFrequency}</strong><i style={`width: ${Math.min(100, Math.max(8, mapRecord.teamFrequency * 10))}%`}></i></div></div></figure>}
       <article class="wiki-content mt-6" data-pagefind-body>
         <p>{map.description} This map is present in the live OpenFrontIO map registry but was not present in the wiki article manifest at the time of this audit.</p>
         <h2>Registry data</h2>

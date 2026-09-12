@@ -132,9 +132,11 @@ const slugify = (value) => value.toLowerCase().replace(/[^a-z0-9]+/g, "-").repla
 const enumNames = Object.fromEntries(
   [...mapsSource.matchAll(/^\s+(\w+) = "([^"]+)"/gm)].map((match) => [match[1], match[2]]),
 );
-const mapRecords = [...mapsSource.matchAll(/\{\s*id: "(\w+)",[\s\S]*?categories: \[([^\]]*)\],[\s\S]*?defaultNationCount: (\d+),[\s\S]*?\n  \},/g)]
-  .map((match) => ({ id: match[1], title: enumNames[match[1]] || match[1], categories: [...match[2].matchAll(/"([^"]+)"/g)].map((item) => item[1]), nations: Number(match[3]) }))
+const allMapRecords = [...mapsSource.matchAll(/\{\s*id: "(\w+)",[\s\S]*?categories: \[([^\]]*)\],[\s\S]*?multiplayerFrequency: (-?\d+),[\s\S]*?ffaFrequency: (-?\d+),[\s\S]*?teamFrequency: (-?\d+),[\s\S]*?defaultNationCount: (\d+),[\s\S]*?\n  \},/g)]
+  .map((match) => ({ id: match[1], title: enumNames[match[1]] || match[1], categories: [...match[2].matchAll(/"([^"]+)"/g)].map((item) => item[1]), multiplayerFrequency: Number(match[3]), ffaFrequency: Number(match[4]), teamFrequency: Number(match[5]), nations: Number(match[6]) }));
+const mapRecords = allMapRecords
   .filter((map) => !pages.some((page) => normalize(page.title) === normalize(map.title)));
+await fs.writeFile(path.join(root, "src/data/map-catalog.json"), `${JSON.stringify({ repository: repo, revision, checkedAt: commitDate, maps: allMapRecords }, null, 2)}\n`);
 const mapImageDir = path.join(root, "public", "images", "maps");
 await fs.mkdir(mapImageDir, { recursive: true });
 for (const map of mapRecords) {

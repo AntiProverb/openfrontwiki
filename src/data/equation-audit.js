@@ -55,8 +55,8 @@ export const EQUATION_AUDIT = {
     {
       name: "Historical wiki formulas",
       formula: "varies by article and game revision",
-      status: "historical",
-      meaning: "Formula-like prose in old update, tournament, and community pages is retained as context until individually rechecked.",
+      status: "context",
+      meaning: "Formula-like prose in old update, tournament, and community pages is historical context; current gameplay guidance is maintained in the verified entries above.",
       source: "/reference/source-tree",
       guide: "/reference/patch-notes",
     },
