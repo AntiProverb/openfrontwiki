@@ -5,6 +5,20 @@ import SiteFooter from "../../components/SiteFooter.astro";
 import BrowseSidebar from "../../components/BrowseSidebar.astro";
 import { GITHUB_GAME_DATA, githubSourceUrl } from "../../data/github-game-data.js";
 import { GITHUB_SOURCE_FILES } from "../../data/github-references.js";
+
+const allEntries = GITHUB_GAME_DATA.sections.flatMap((section) => section.entries);
+const entry = (label) => allEntries.find((item) => item.label === label);
+const numberFrom = (label) => Number(entry(label)?.value.replace(/[^0-9]/g, "") || 0);
+const costChart = ["City", "Defense Post", "Warship", "Missile Silo", "SAM Launcher", "Atom Bomb", "Hydrogen Bomb", "MIRV launch"].map((label) => ({
+  label,
+  value: numberFrom(label),
+}));
+const maxCost = Math.max(...costChart.map((item) => item.value));
+const clockChart = [
+  { label: "Warning", value: 30, color: "bg-cyan-glow" },
+  { label: "Troop ramp", value: 90, color: "bg-malibu" },
+  { label: "Territory deadline", value: numberFrom("Territory elimination deadline"), color: "bg-territory" },
+];
 ---
 
 <Layout title="Game Data Reference — OpenFront Wiki" description="A versioned reference of OpenFront game values checked against the OpenFrontIO GitHub source.">
@@ -34,6 +48,22 @@ import { GITHUB_SOURCE_FILES } from "../../data/github-references.js";
           <a href={`https://github.com/${GITHUB_GAME_DATA.repository}/commit/${GITHUB_GAME_DATA.revision}`} target="_blank" rel="noopener noreferrer" class="text-aquarius hover:text-white">Commit {GITHUB_GAME_DATA.revision.slice(0, 7)} →</a>
         </div>
       </header>
+
+      <section class="mt-8 grid gap-4 lg:grid-cols-2" data-pagefind-ignore>
+        <figure class="data-visual-panel">
+          <figcaption><span>Base cost scale</span><small>Gold · relative comparison</small></figcaption>
+          <div class="mt-5 space-y-3">
+            {costChart.map((item) => <div class="data-bar-row"><span>{item.label}</span><div class="data-bar-track"><span class="data-bar bg-malibu" style={`width: ${Math.max(3, (item.value / maxCost) * 100)}%`}></span></div><strong>{item.value.toLocaleString()}</strong></div>)}
+          </div>
+        </figure>
+        <figure class="data-visual-panel">
+          <figcaption><span>Doomsday timeline</span><small>Seconds · source defaults</small></figcaption>
+          <div class="timeline-visual mt-5">
+            {clockChart.map((item) => <div class="timeline-step"><span class={`timeline-dot ${item.color}`}></span><div><strong>{item.value}s</strong><span>{item.label}</span></div></div>)}
+          </div>
+          <p class="mt-4 text-xs leading-relaxed text-dawn/60">These phases are configuration values, not a substitute for the full Doomsday Clock explanation.</p>
+        </figure>
+      </section>
 
       <div class="mt-8 space-y-8" data-pagefind-body>
         {GITHUB_GAME_DATA.sections.map((section) => (

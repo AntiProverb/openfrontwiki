@@ -4,7 +4,7 @@ import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import BrowseSidebar from "../components/BrowseSidebar.astro";
 import pages from "../data/pages.json";
-import { pageDescription } from "../lib/meta.js";
+import { articleAudience, articleLead, pageDescription } from "../lib/meta.js";
 import { githubReferencesForPage } from "../data/github-references.js";
 import { currentGameDataForPage, GITHUB_GAME_DATA } from "../data/github-game-data.js";
 
@@ -17,6 +17,8 @@ export function getStaticPaths() {
 
 const { page } = Astro.props;
 const metaDescription = pageDescription(page.html);
+const lead = articleLead(page.html);
+const audience = articleAudience(page);
 const githubReferences = githubReferencesForPage(page);
 const currentGameData = currentGameDataForPage(page.slug);
 
@@ -77,6 +79,18 @@ const isStub = (page.cats || []).some((c) => /stub/i.test(c));
           )
         }
       </div>
+
+      <section class="article-quick-read mt-5" data-pagefind-ignore>
+        <div class="article-quick-read-heading">
+          <span class="article-eyebrow">Quick read</span>
+          <span class="article-length">{page.headings.length > 4 ? "Detailed reference" : "Focused reference"}</span>
+        </div>
+        <p>{lead || "This page is part of the OpenFront Wiki reference library."}</p>
+        <div class="article-audience">
+          {audience.map((label) => <span>{label}</span>)}
+          {isStub && <span class="article-warning">Needs expansion</span>}
+        </div>
+      </section>
 
       {
         topicalCats.length > 0 && (
