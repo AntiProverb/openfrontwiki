@@ -59,7 +59,7 @@ const mastersSub = [
 
     <details class="wiki-section" data-key="source-audit">
       <summary class="wiki-summary"><span>Source coverage</span></summary>
-      <ul class="wiki-category-links"><li><a href="/reference/source-tree" class={linkCls("/reference/source-tree")}>Source tree audit</a></li></ul>
+      <ul class="wiki-category-links"><li><a href="/reference/equations" class={linkCls("/reference/equations")}>Equation audit</a></li><li><a href="/reference/source-tree" class={linkCls("/reference/source-tree")}>Source tree audit</a></li></ul>
     </details>
 
     <details class="wiki-section" data-key="game">
@@ -89,6 +89,16 @@ const mastersSub = [
 </div>
 
 <style>
+  #wiki-browse { display: flex; flex-direction: column; }
+  #wiki-browse > details[data-key="game"] { order: 1; }
+  #wiki-browse > details[data-key="categories"] { order: 2; }
+  #wiki-browse > details[data-key="masters"] { order: 3; }
+  #wiki-browse > details[data-key="reference-hubs"] { order: 4; opacity: 0.72; }
+  #wiki-browse > details[data-key="live-registry"],
+  #wiki-browse > details[data-key="source-audit"] { order: 5; opacity: 0.52; }
+  #wiki-browse > details[data-key="reference-hubs"] .wiki-summary,
+  #wiki-browse > details[data-key="live-registry"] .wiki-summary,
+  #wiki-browse > details[data-key="source-audit"] .wiki-summary { color: var(--color-dawn); }
   .wiki-summary, .wiki-subsummary { cursor: pointer; list-style: none; display: flex; align-items: center; gap: 6px; user-select: none; }
   .wiki-summary::-webkit-details-marker, .wiki-subsummary::-webkit-details-marker { display: none; }
   .wiki-summary { padding: 0.4rem 0.25rem; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-cyan-glow); }

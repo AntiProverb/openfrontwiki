@@ -42,6 +42,10 @@ const mastersGroups = isMastersHub
 const MAINT = /stub|broken file|hatnote|disambiguation|^all |^pages with|^articles with/i;
 const topicalCats = (page.cats || []).filter((c) => !MAINT.test(c));
 const isStub = (page.cats || []).some((c) => /stub/i.test(c));
+const relatedPages = pages
+  .filter((candidate) => candidate.slug !== page.slug && candidate.source !== "liquipedia" && candidate.section === page.section)
+  .sort((a, b) => a.title.localeCompare(b.title))
+  .slice(0, 4);
 ---
 
 <Layout title={`${page.title} — OpenFront Wiki`} description={metaDescription}>
@@ -141,6 +145,15 @@ const isStub = (page.cats || []).some((c) => /stub/i.test(c));
               <li><a href={reference.url} target="_blank" rel="noopener noreferrer" class="text-aquarius hover:text-white">{reference.label} <span aria-hidden="true">↗</span></a></li>
             ))}
           </ul>
+        </section>
+      )}
+
+      {relatedPages.length > 0 && (
+        <section class="mt-8 border-t border-white/10 pt-5" data-pagefind-ignore>
+          <p class="text-xs font-semibold uppercase tracking-widest text-cyan-glow">Keep reading</p>
+          <div class="mt-3 grid gap-2 sm:grid-cols-2">
+            {relatedPages.map((related) => <a href={`/${related.slug}`} class="rounded-lg border border-white/10 bg-navy-700/40 px-3 py-2 text-sm text-dawn/80 transition-colors hover:border-malibu/50 hover:text-white">{related.title} <span class="text-dawn/40">→</span></a>)}
+          </div>
         </section>
       )}
 

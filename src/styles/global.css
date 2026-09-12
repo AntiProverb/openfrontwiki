@@ -77,6 +77,13 @@ body {
 .equation code { white-space: nowrap; color: var(--color-cyan-glow); }
 .source-note { border-top: 1px solid rgb(255 255 255 / 0.1); color: var(--color-dawn); font-size: 0.82rem; opacity: 0.8; padding-top: 1rem; }
 .equation-review { border: 1px solid rgb(255 215 0 / 0.22); border-radius: 0.75rem; background: rgb(255 215 0 / 0.06); padding: 1rem 1.1rem; }
+.equation-audit-card { border: 1px solid rgb(255 255 255 / 0.1); border-radius: 0.75rem; background: rgb(14 29 53 / 0.62); padding: 1rem 1.1rem; }
+.equation-audit-card h2 { margin: 0; color: #fff; font-family: var(--font-display), var(--font-sans); font-size: 1.15rem; }
+.equation-audit-card p { margin: 0.7rem 0; color: var(--color-dawn); font-size: 0.9rem; line-height: 1.55; }
+.equation-audit-card .equation-audit-formula { display: block; margin-top: 0.75rem; overflow-x: auto; color: var(--color-cyan-glow); font-size: 0.82rem; white-space: nowrap; }
+.equation-status { border: 1px solid rgb(0 200 255 / 0.25); border-radius: 999px; padding: 0.2rem 0.55rem; color: var(--color-cyan-glow); font-size: 0.68rem; text-transform: uppercase; }
+.equation-audit-historical { border-color: rgb(255 215 0 / 0.22); }
+.equation-audit-historical .equation-status { border-color: rgb(255 215 0 / 0.3); color: var(--color-masters); }
 
 /* Faint hexagonal grid motif — referenced in brand art direction. */
 .hex-grid {
