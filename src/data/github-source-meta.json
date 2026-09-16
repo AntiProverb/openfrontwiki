@@ -1,7 +1,7 @@
 {
   "repository": "openfrontio/OpenFrontIO",
-  "revision": "1b086cb59cb1d702eb3de3e8706a9b303ac064a6",
-  "commitUrl": "https://github.com/openfrontio/OpenFrontIO/commit/1b086cb59cb1d702eb3de3e8706a9b303ac064a6",
-  "checkedAt": "2026-09-12",
-  "commitMessage": "Add tests locking in kick-player, replay-speed and events-display paths (#5376)"
+  "revision": "960ed616a0468517ba13646d46b8c938add27a15",
+  "commitUrl": "https://github.com/openfrontio/OpenFrontIO/commit/960ed616a0468517ba13646d46b8c938add27a15",
+  "checkedAt": "2026-09-15",
+  "commitMessage": "fix(matchmaking): name the page's site on join and the server's on check-in (infra #738) (#5456)"
 }
