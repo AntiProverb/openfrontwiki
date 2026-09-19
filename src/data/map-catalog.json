@@ -1,7 +1,7 @@
 {
   "repository": "openfrontio/OpenFrontIO",
-  "revision": "1b086cb59cb1d702eb3de3e8706a9b303ac064a6",
-  "checkedAt": "2026-09-12",
+  "revision": "df9114ee681dcb1a0af47215438f4e60db5d0719",
+  "checkedAt": "2026-09-19",
   "maps": [
     {
       "id": "Achiran",
@@ -340,6 +340,18 @@
       "nations": 22
     },
     {
+      "id": "ChannelIslands",
+      "title": "Channel Islands",
+      "categories": [
+        "new",
+        "north_america"
+      ],
+      "multiplayerFrequency": 7,
+      "ffaFrequency": -1,
+      "teamFrequency": -1,
+      "nations": 44
+    },
+    {
       "id": "China",
       "title": "China",
       "categories": [
@@ -600,6 +612,18 @@
       "ffaFrequency": -1,
       "teamFrequency": -1,
       "nations": 22
+    },
+    {
+      "id": "GulfOfMexico",
+      "title": "Gulf Of Mexico",
+      "categories": [
+        "north_america",
+        "new"
+      ],
+      "multiplayerFrequency": 5,
+      "ffaFrequency": -1,
+      "teamFrequency": -1,
+      "nations": 37
     },
     {
       "id": "GulfOfStLawrence",
@@ -926,6 +950,18 @@
       "nations": 20
     },
     {
+      "id": "NewZealand",
+      "title": "New Zealand",
+      "categories": [
+        "new",
+        "oceania"
+      ],
+      "multiplayerFrequency": 5,
+      "ffaFrequency": -1,
+      "teamFrequency": -1,
+      "nations": 20
+    },
+    {
       "id": "NileDelta",
       "title": "Nile Delta",
       "categories": [
@@ -1015,6 +1051,18 @@
       "ffaFrequency": -1,
       "teamFrequency": 12,
       "nations": 16
+    },
+    {
+      "id": "PulicatLake",
+      "title": "Pulicat Lake",
+      "categories": [
+        "asia",
+        "new"
+      ],
+      "multiplayerFrequency": 3,
+      "ffaFrequency": -1,
+      "teamFrequency": -1,
+      "nations": 12
     },
     {
       "id": "QingChina",

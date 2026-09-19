@@ -1,4 +1,4 @@
-const source = (path) => `https://github.com/openfrontio/OpenFrontIO/blob/1b086cb59cb1d702eb3de3e8706a9b303ac064a6/${path}`;
+const source = (path) => `https://github.com/openfrontio/OpenFrontIO/blob/df9114ee681dcb1a0af47215438f4e60db5d0719/${path}`;
 
 export const REFERENCE_PAGES = [
   {

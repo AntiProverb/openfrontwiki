@@ -1,10 +1,14 @@
-export const LIVE_GAME_REVISION = "1b086cb59cb1d702eb3de3e8706a9b303ac064a6";
+export const LIVE_GAME_REVISION = "df9114ee681dcb1a0af47215438f4e60db5d0719";
 const MAP_SOURCE = `https://github.com/openfrontio/OpenFrontIO/blob/${LIVE_GAME_REVISION}/src/core/game/Maps.gen.ts`;
 const GAME_SOURCE = `https://github.com/openfrontio/OpenFrontIO/blob/${LIVE_GAME_REVISION}/src/core/game/Game.ts`;
 
 export const MISSING_LIVE_MAPS = [
   { slug: "cape-cod", id: "CapeCod", title: "Cape Cod", categories: ["North America","New"], nations: 31, image: "/images/maps/cape-cod.png", description: "Cape Cod is a live OpenFront map in the North America, New catalogue with 31 default nations.", source: MAP_SOURCE },
   { slug: "central-america", id: "CentralAmerica", title: "Central America", categories: ["New","North America"], nations: 22, image: "/images/maps/central-america.png", description: "Central America is a live OpenFront map in the New, North America catalogue with 22 default nations.", source: MAP_SOURCE },
+  { slug: "channel-islands", id: "ChannelIslands", title: "Channel Islands", categories: ["New","North America"], nations: 44, image: "/images/maps/channel-islands.png", description: "Channel Islands is a live OpenFront map in the New, North America catalogue with 44 default nations.", source: MAP_SOURCE },
+  { slug: "gulf-of-mexico", id: "GulfOfMexico", title: "Gulf Of Mexico", categories: ["North America","New"], nations: 37, image: "/images/maps/gulf-of-mexico.png", description: "Gulf Of Mexico is a live OpenFront map in the North America, New catalogue with 37 default nations.", source: MAP_SOURCE },
+  { slug: "new-zealand", id: "NewZealand", title: "New Zealand", categories: ["New","Oceania"], nations: 20, image: "/images/maps/new-zealand.png", description: "New Zealand is a live OpenFront map in the New, Oceania catalogue with 20 default nations.", source: MAP_SOURCE },
+  { slug: "pulicat-lake", id: "PulicatLake", title: "Pulicat Lake", categories: ["Asia","New"], nations: 12, image: "/images/maps/pulicat-lake.png", description: "Pulicat Lake is a live OpenFront map in the Asia, New catalogue with 12 default nations.", source: MAP_SOURCE },
   { slug: "qing-china", id: "QingChina", title: "Qing China", categories: ["Asia","Countries"], nations: 32, image: "/images/maps/qing-china.png", description: "Qing China is a live OpenFront map in the Asia, Countries catalogue with 32 default nations.", source: MAP_SOURCE },
   { slug: "tourney-2-teams", id: "Tourney1", title: "Tourney 2 Teams", categories: ["Tournament"], nations: 2, image: "/images/maps/tourney-2-teams.png", description: "Tourney 2 Teams is a live OpenFront map in the Tournament catalogue with 2 default nations.", source: MAP_SOURCE },
   { slug: "tourney-3-teams", id: "Tourney2", title: "Tourney 3 Teams", categories: ["Tournament"], nations: 3, image: "/images/maps/tourney-3-teams.png", description: "Tourney 3 Teams is a live OpenFront map in the Tournament catalogue with 3 default nations.", source: MAP_SOURCE },
