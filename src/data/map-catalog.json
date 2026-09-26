@@ -1,7 +1,7 @@
 {
   "repository": "openfrontio/OpenFrontIO",
-  "revision": "1b086cb59cb1d702eb3de3e8706a9b303ac064a6",
-  "checkedAt": "2026-09-12",
+  "revision": "4d8608d7e3516bcae5152c75d54f7dd70e23bbb3",
+  "checkedAt": "2026-09-26",
   "maps": [
     {
       "id": "Achiran",
@@ -46,7 +46,7 @@
       "categories": [
         "europe"
       ],
-      "multiplayerFrequency": 4,
+      "multiplayerFrequency": 8,
       "ffaFrequency": -1,
       "teamFrequency": -1,
       "nations": 30
@@ -121,6 +121,19 @@
       "ffaFrequency": -1,
       "teamFrequency": -1,
       "nations": 7
+    },
+    {
+      "id": "BabelMandebStrait",
+      "title": "Bab el-Mandeb Strait",
+      "categories": [
+        "new",
+        "africa",
+        "asia"
+      ],
+      "multiplayerFrequency": 5,
+      "ffaFrequency": -1,
+      "teamFrequency": 10,
+      "nations": 26
     },
     {
       "id": "Baikal",
@@ -282,11 +295,22 @@
       "nations": 23
     },
     {
+      "id": "CanaryIslands",
+      "title": "Canary Islands",
+      "categories": [
+        "new",
+        "africa"
+      ],
+      "multiplayerFrequency": 3,
+      "ffaFrequency": -1,
+      "teamFrequency": 10,
+      "nations": 14
+    },
+    {
       "id": "CapeCod",
       "title": "Cape Cod",
       "categories": [
-        "north_america",
-        "new"
+        "north_america"
       ],
       "multiplayerFrequency": 4,
       "ffaFrequency": -1,
@@ -331,7 +355,6 @@
       "id": "CentralAmerica",
       "title": "Central America",
       "categories": [
-        "new",
         "north_america"
       ],
       "multiplayerFrequency": 5,
@@ -340,12 +363,22 @@
       "nations": 22
     },
     {
+      "id": "ChannelIslands",
+      "title": "Channel Islands",
+      "categories": [
+        "north_america"
+      ],
+      "multiplayerFrequency": 4,
+      "ffaFrequency": -1,
+      "teamFrequency": 7,
+      "nations": 44
+    },
+    {
       "id": "China",
       "title": "China",
       "categories": [
         "countries",
-        "asia",
-        "new"
+        "asia"
       ],
       "multiplayerFrequency": 8,
       "ffaFrequency": -1,
@@ -602,6 +635,17 @@
       "nations": 22
     },
     {
+      "id": "GulfOfMexico",
+      "title": "Gulf Of Mexico",
+      "categories": [
+        "north_america"
+      ],
+      "multiplayerFrequency": 5,
+      "ffaFrequency": -1,
+      "teamFrequency": -1,
+      "nations": 37
+    },
+    {
       "id": "GulfOfStLawrence",
       "title": "Gulf of St. Lawrence",
       "categories": [
@@ -651,10 +695,22 @@
       "categories": [
         "asia"
       ],
-      "multiplayerFrequency": 6,
+      "multiplayerFrequency": 8,
       "ffaFrequency": -1,
       "teamFrequency": -1,
       "nations": 71
+    },
+    {
+      "id": "HornOfAfrica",
+      "title": "Horn Of Africa",
+      "categories": [
+        "africa",
+        "new"
+      ],
+      "multiplayerFrequency": 5,
+      "ffaFrequency": -1,
+      "teamFrequency": -1,
+      "nations": 29
     },
     {
       "id": "Iceland",
@@ -926,6 +982,18 @@
       "nations": 20
     },
     {
+      "id": "NewZealand",
+      "title": "New Zealand",
+      "categories": [
+        "new",
+        "oceania"
+      ],
+      "multiplayerFrequency": 5,
+      "ffaFrequency": -1,
+      "teamFrequency": -1,
+      "nations": 20
+    },
+    {
       "id": "NileDelta",
       "title": "Nile Delta",
       "categories": [
@@ -1017,6 +1085,18 @@
       "nations": 16
     },
     {
+      "id": "PulicatLake",
+      "title": "Pulicat Lake",
+      "categories": [
+        "asia",
+        "new"
+      ],
+      "multiplayerFrequency": 3,
+      "ffaFrequency": -1,
+      "teamFrequency": -1,
+      "nations": 12
+    },
+    {
       "id": "QingChina",
       "title": "Qing China",
       "categories": [
@@ -1027,6 +1107,18 @@
       "ffaFrequency": -1,
       "teamFrequency": -1,
       "nations": 32
+    },
+    {
+      "id": "RioDeJaneiro",
+      "title": "Rio de Janeiro",
+      "categories": [
+        "south_america",
+        "new"
+      ],
+      "multiplayerFrequency": 4,
+      "ffaFrequency": -1,
+      "teamFrequency": -1,
+      "nations": 30
     },
     {
       "id": "Russia",
@@ -1184,7 +1276,7 @@
       "categories": [
         "arcade"
       ],
-      "multiplayerFrequency": 3,
+      "multiplayerFrequency": 6,
       "ffaFrequency": -1,
       "teamFrequency": -1,
       "nations": 13
@@ -1351,7 +1443,6 @@
       "id": "YangtzeRiver",
       "title": "Yangtze River",
       "categories": [
-        "new",
         "asia"
       ],
       "multiplayerFrequency": 3,

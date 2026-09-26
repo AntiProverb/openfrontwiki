@@ -1,4 +1,4 @@
-export const OPENFRONTIO_REVISION = "1b086cb59cb1d702eb3de3e8706a9b303ac064a6";
+export const OPENFRONTIO_REVISION = "4d8608d7e3516bcae5152c75d54f7dd70e23bbb3";
 const ROOT = `https://github.com/openfrontio/OpenFrontIO/blob/${OPENFRONTIO_REVISION}/`;
 
 const files = {
