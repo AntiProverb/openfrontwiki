@@ -1,7 +1,7 @@
 {
   "repository": "openfrontio/OpenFrontIO",
-  "revision": "1b086cb59cb1d702eb3de3e8706a9b303ac064a6",
-  "commitUrl": "https://github.com/openfrontio/OpenFrontIO/commit/1b086cb59cb1d702eb3de3e8706a9b303ac064a6",
-  "checkedAt": "2026-09-12",
-  "commitMessage": "Add tests locking in kick-player, replay-speed and events-display paths (#5376)"
+  "revision": "e02eeba66b4801ebae0b686e1b0e4bc03fbf3654",
+  "commitUrl": "https://github.com/openfrontio/OpenFrontIO/commit/e02eeba66b4801ebae0b686e1b0e4bc03fbf3654",
+  "checkedAt": "2026-10-01",
+  "commitMessage": "Fix solo game start opening the YouTube tutorial on Firefox Android 📺 (#5745)"
 }
